@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    
+    <title>Página de Registro</title>
+
+</head>
+<body>
+    <div class="registration-card">
+        <div class="left-section">
+            <img src="./fotos/LogoDasa.png" alt="User Photo">
+        </div>
+        <div class="right-section">
+            <h2>Registro</h2>
+            <h4>Cadastre-se para acessar nosso portal!</h4>
+            <form id="registrationForm" class="registration-form" action="/register" method="post">
+                <label for="nome">Seu nome completo
+                <input type="text" name="nome" placeholder="Nome Completo" required></label>
+
+                <label for="login">Seu login
+                    <input type="text" name="login" placeholder="Login" required></label>
+
+                <label for="email">Seu melhor E-mail
+                <input type="text" name="email" placeholder="Email" required></label>
+
+                <label for="Confirmemail">Confirme seu E-mail
+                    <input type="text" name="Confirmemail" placeholder="Email" required></label>
+
+                <label for="password">Sua senha
+                <input type="password" name="senha" placeholder="Senha" required></label>
+
+                <label for="confirmpassword">Confirme sua senha
+                    <input type="password" name="confirmpassword" placeholder="Confirmar Senha" required>
+                </label>
+
+                <label for="telefone"> Telefone com DDD
+                <input type="text" name="phone" placeholder="Telefone" required></label>
+
+               <button id="registerButton" type="submit" value="Registrar">Registrar</button>
+            </form>
+
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" id="closeModal">&times;</span>
+                  <p>Verifique o seu e-mail para concluir o registro.</p>
+                </div>
+              </div>
+              
+              <script>
+                            // Adicione o código JavaScript no final do seu arquivo HTML
+                const registrationForm = document.getElementById('registrationForm');
+                const registerButton = document.getElementById('registerButton');
+
+                registerButton.addEventListener('click', function(event) {
+                event.preventDefault(); // Evite que o formulário seja enviado imediatamente
+                showModalWithDelay(); // Chame a função para mostrar o modal após um atraso
+                });
+
+                function showModalWithDelay() {
+                setTimeout(function() {
+                    showModal();
+                    registrationForm.submit(); // Envie o formulário após o modal ser mostrado
+                }, 100);
+                }
+
+                // Função para mostrar o modal
+                function showModal() {
+                const modal = document.getElementById('myModal');
+                modal.style.display = 'block';
+
+                // Fechar o modal após 3 segundos
+                setTimeout(function() {
+                    modal.style.display = 'none';
+                }, 3000);
+                }
+
+                const closeModal = document.getElementById('closeModal');
+
+               // Fechar o modal quando o usuário clicar no "x"
+                closeModal.onclick = function() {
+                const modal = document.getElementById('myModal');
+                modal.style.display = 'none';
+                };
+
+              </script>
+        </div>
+    </div>
+
+    <script>   // Captura o formulário pelo ID (adicione um ID ao formulário)
+        const form = document.querySelector('.registration-form');
+             
+        form.addEventListener('submit', function (event) {
+            // Pára o envio padrão do formulário
+            event.preventDefault();
+     
+            // Captura os valores dos campos do formulário
+            const nome = form.querySelector('input[name="nome"]').value;
+            const login = form.querySelector('input[name="login"]').value;
+            const email = form.querySelector('input[name="email"]').value;
+            const confirmEmail = form.querySelector('input[name="Confirmemail"]').value;
+            const senha = form.querySelector('input[name="senha"]').value;
+            const confirmSenha = form.querySelector('input[name="confirmpassword"]').value;
+            const telefone = form.querySelector('input[name="phone"]').value;
+     
+            // Adicione suas regras de validação aqui
+            if (nome.trim() === '') {
+                alert('Por favor, insira seu nome.');
+                return;
+            }
+     
+            if (login.trim() === '') {
+                alert('Por favor, insira seu login.');
+                return;
+            }
+     
+            if (email.trim() === '' || !isValidEmail(email)) {
+                alert('Por favor, insira um email válido.');
+                return;
+            }
+     
+            if (email !== confirmEmail) {
+                alert('Os emails não coincidem.');
+                return;
+            }
+     
+            if (senha.trim() === '' || senha.length < 6) {
+                alert('A senha deve ter pelo menos 6 caracteres.');
+                return;
+            }
+     
+            if (senha !== confirmSenha) {
+                alert('As senhas não coincidem.');
+                return;
+            }
+     
+            if (telefone.trim() === '' || !isValidPhone(telefone)) {
+                alert('Por favor, insira um número de telefone válido.');
+                return;
+            }
+     
+            // Se todas as validações passarem, o formulário será enviado
+            form.submit();
+        });
+     
+        // Função para verificar o formato de email
+        function isValidEmail(email) {
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            return emailRegex.test(email);
+        }
+     
+        // Função para verificar o formato de telefone (simplificado)
+        function isValidPhone(phone) {
+            const phoneRegex = /^\d{10,11}$/;
+            return phoneRegex.test(phone);
+        }
+        </script>
+</body>
+</html>

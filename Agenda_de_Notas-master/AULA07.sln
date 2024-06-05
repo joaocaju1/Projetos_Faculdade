@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AULA07", "AULA07\AULA07.csproj", "{2B37E2F3-B034-44E2-B399-2265B4412354}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{6B6DD163-E79C-47A2-897C-6F0735853CA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B37E2F3-B034-44E2-B399-2265B4412354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B37E2F3-B034-44E2-B399-2265B4412354}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B37E2F3-B034-44E2-B399-2265B4412354}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B37E2F3-B034-44E2-B399-2265B4412354}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B6DD163-E79C-47A2-897C-6F0735853CA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B6DD163-E79C-47A2-897C-6F0735853CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B6DD163-E79C-47A2-897C-6F0735853CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B6DD163-E79C-47A2-897C-6F0735853CA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0894E43D-54E5-403C-9F87-F6380F41E3D7}
+	EndGlobalSection
+EndGlobal

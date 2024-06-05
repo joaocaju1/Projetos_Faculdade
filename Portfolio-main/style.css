@@ -1,0 +1,264 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    --background-image: url(/imagem/fundo.png);
+    width: auto;
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    justify-content: center;
+    padding: 35px;
+    background-color: rgb(255, 255, 255);
+    list-style-type: none;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    
+
+}
+
+.cabecalho2 ul{
+    display: flex;
+    
+    
+    
+}
+
+.cabecalho2 ul li{
+    list-style-type: none;
+    padding-right: 14px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 7px;
+    width: 200px;
+    text-decoration: none;
+}
+
+.cabecalho2 a{
+    text-decoration: none;
+    color: black;
+}
+
+.cabecalho li:hover{
+    background-image: linear-gradient(to right, rgb(255, 0, 55), rgb(245, 16, 195), rgb(132, 0, 255));
+    color: black;
+    background-clip: text;
+    -webkit-background-clip: text;
+  
+    /* Adicionado: */
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+}
+
+.iconecabecalho{
+    display: flex;
+    grid-gap: 30px;
+    text-decoration: none;
+}
+
+
+.containercentral {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15vh;
+}
+
+.container1{
+    width: 700px;
+    height: 400px;
+    border: 0px solid rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 6, 10);
+    font-family: 'popins', sans-serif;
+
+   
+}
+
+.container2 img {
+    border: 3px solid rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 300px;
+    
+}
+
+span{
+    background-image: linear-gradient(to right, rgb(255, 0, 55), rgb(245, 16, 195), rgb(132, 0, 255));
+    color: black;
+    background-clip: text;
+    -webkit-background-clip: text;
+  
+    /* Adicionado: */
+    -webkit-text-fill-color: transparent;
+
+}
+
+.texto button{
+    border-radius: 10px;
+    width: 140px;
+    height: 40px;
+    border: 0px;
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(to right, rgb(255, 0, 55), rgb(245, 16, 195), rgb(132, 0, 255));
+
+}
+
+.texto button:hover{
+    border-radius: 10px;
+    width: 140px;
+    height: 40px;
+    background-color: rgb(7, 0, 0);
+    color: rgb(8, 0, 0);
+
+}
+
+.texto h1{
+    font-size: 40px;
+}
+
+.cabecalho3{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    width: auto;
+    padding: 33px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20vh;
+    color: rgb(0, 0, 0);
+    font-family: 'popins', sans-serif;
+}
+
+.icones ul{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
+    margin-left: 150px;
+}
+
+.icones li{
+    width: 220px;
+}
+
+.cabecalho4{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    width: auto;
+    padding: 33px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20vh;
+    color: rgb(0, 6, 10);
+    font-family: 'popins', sans-serif;
+}
+
+.projetos {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    border:     0px solid green ;
+    justify-content: center;
+    align-items: center;
+}
+
+.colunaflex {
+    width: 875px;
+    display: flex;
+    border: 0px solid rgb(18, 1, 248);
+    gap: 100px;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row; 
+
+}
+
+.contatoss{
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    border: 0px solid rgb(109, 91, 91);
+    height: 200px;
+
+
+}
+
+.contatoss1{
+
+    color: red;
+    border: 0px solid rgb(255, 0, 119);
+    width: 850px;
+
+
+}
+
+
+.contatoss1 ul{
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: row; 
+    list-style-type: none;
+    width: auto;
+    justify-content:  flex-end;
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+    gap: 35px;
+    
+
+
+
+}
+
+.contatoss1 ul li{
+    color: rgb(0, 0, 0);
+    border: 0px solid rgb(0, 255, 191);
+
+}
+
+.contatoss1 img{
+    width: 25px;
+}
+
+.contatoss2 ul{
+    flex-direction: row; 
+    list-style-type: none;
+    justify-content:  flex-end;
+    display: flex;
+    gap: 70px;
+}
+.contatoss2 a{
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    gap:90px
+}
+
+.contatoss2 a:hover{
+    background-image: linear-gradient(to right, rgb(255, 0, 55), rgb(245, 16, 195), rgb(132, 0, 255));
+    color: black;
+    background-clip: text;
+    -webkit-background-clip: text;
+  
+    /* Adicionado: */
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+

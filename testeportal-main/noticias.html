@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Notícias</title>
+    <style>
+        /* Reset de estilos e configurações gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: #000000;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 20px;
+        }
+
+        header .logo {
+            display: flex;
+            gap: 200px;
+        }
+
+        header ul {
+            list-style: none;
+            display: flex;
+        }
+
+        header ul li {
+            margin-right: 20px;
+        }
+
+        header ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        header ul li a:hover {
+            text-decoration: none;
+            color: rgb(37, 178, 197);
+        }
+
+        /* nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        } */
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .headline {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .featured-news {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .featured-news img {
+            max-width: 45%;
+            border-radius: 5px;
+        }
+
+        .news-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .news-list li {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">D.A.S.A Unisanta</div>
+            <ul>
+                <li><a href="/portalprivado"><strong>Voltar</strong></a></li>
+                <li id="logout"><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- <nav>
+        <a href="#">Portal</a> | 
+        <a href="#">Bloco de notas</a> | 
+        <a href="#">Vagas</a> | 
+    </nav> -->
+
+    <section>
+        <h2>Manchetes</h2>
+        <div class="headline">6,4 milhões de casas do país não têm acesso à internet, diz IBGE</div>
+        <p></p>
+    </section>
+
+    <section>
+        <h2>Notícias em Destaque</h2>
+        <div class="featured-news">
+            <img src="https://via.placeholder.com/300" alt="Imagem da notícia em destaque">
+            <div>
+                <div class="headline">6,4 milhões de casas do país não têm acesso à internet, diz IBGE</div>
+                <p>Em 2022, 6,4 milhões de domicílios do país não utilizavam a internet, mostram os dados da Pesquisa Nacional por Amostra de Domicílios (Pnad) Contínua Tecnologia da Informação e Comunicação (TIC), divulgada nesta quinta-feira (9), pelo Instituto Brasileiro de Geografia e Estatística </p>
+            </div>
+        </div>
+
+        <div class="featured-news">
+            <img src="https://via.placeholder.com/300" alt="Imagem da notícia em destaque">
+            <div>
+                <div class="headline">Título da Notícia em Destaque 2</div>
+                <p>Descrição da Notícia em Destaque 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Últimas Notícias</h2>
+        <ul class="news-list">
+            <li>
+                <div class="headline">Título da Última Notícia 1</div>
+                <p>Descrição da Última Notícia 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </li>
+
+            <li>
+                <div class="headline">Título da Última Notícia 2</div>
+                <p>Descrição da Última Notícia 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </li>
+
+            <li>
+                <div class="headline">Título da Última Notícia 3</div>
+                <p>Descrição da Última Notícia 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Portal de Exemplo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>s

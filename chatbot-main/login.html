@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela de Cadastro</title>
+  <!-- Inclua o Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Inclua o Bootstrap Validator CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css">
+  <!-- Inclua o InputMask.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen">
+  <style>
+    /* Estilos gerais */
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      padding: 0px;
+    }
+
+    .footer {
+      margin-top: 0px;
+    }
+
+    .fullscreen-section {
+    height: 100vh; /* Toda a altura da tela */
+    background-image: url('./img/hiu_4.jpg'); /* Adicione sua imagem de fundo aqui */
+    background-size: cover;
+    background-position: center;
+    color: #0d0101; /* Cor do texto */
+}
+  </style>
+</head>
+<body>
+
+    <div class="container-fluid fullscreen-section">
+    <div class="container">
+        <!-- Cabeçalho -->
+        <nav class="navbar navbar-expand-lg navbar-light ">
+          <a class="navbar-brand portal" href="#">  
+            <strong>PORTAL D.A.S.A</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link lista" href="/login.html"><strong>Login</strong></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link lista" href="/cadastro.html"><strong>Cadastre-se</strong></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link lista" href="/index.html"><strong>Conheça</strong></a>
+            </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-lg-6 mx-auto">
+      <div class="card" style="margin-top: 200px;">
+        <div class="card-body">
+            <br>
+            <div class="row">
+                <div class="text-center"><h2><strong>PORTAL D.A.S.A</strong></h2></div>
+              
+            </div>
+           
+          
+            <br>
+            <div class="form-group">
+                <label for="ralogin"><strong>Login (RA)</strong></label>
+                <input type="text" class="form-control" id="ralogin" name="ralogin" min="100000" max="999999" required>
+              </div>
+            <br>
+            <div class="form-group">
+                <label for="password"><strong>Senha:</strong></label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+
+
+          
+            <div class="form-group text-center">
+                <br>
+              <button type="submit" class="btn btn-primary" style="width: 100%">Cadastrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<footer class="bg-dark text-light text-center py-3 footer">
+  <div class="container rodape">
+    <p>&copy; 2023 PORTAL D.A.S.A. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- Inclua o Bootstrap JS e o jQuery (necessários para a validação) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Inclua o Bootstrap Validator JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
+<!-- Inclua a máscara para o campo de telefone -->
+<script>
+  $(document).ready(function () {
+    // Adicione a máscara ao campo de telefone
+    $('#telefone').mask('(00) 0000-0000');
+
+    // Ative o Bootstrap Validator no formulário
+    $('#cadastroForm').bootstrapValidator({
+      fields: {
+        nome: {
+          validators: {
+            notEmpty: {
+              message: 'O campo nome é obrigatório'
+            }
+          }
+        },
+       
+        ra: {
+          validators: {
+            notEmpty: {
+              message: 'O campo RA é obrigatório'
+            },
+            integer: {
+              message: 'O RA deve ser um número inteiro'
+            },
+            stringLength: {
+              max: 6,
+              message: 'O RA deve ter no máximo 6 dígitos'
+            }
+          }
+        },
+      }
+    });
+  });
+</script>
+</body>
+</html>

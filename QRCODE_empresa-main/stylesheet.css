@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+  background-image: url("./fundo.png");
+}
+
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+
+}
+
+.conteudo{
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+    width: 500px;
+}
+
+.aba{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    
+
+}
+
+h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.qrcode{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+
+}

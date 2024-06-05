@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylenota.css">
+
+    <title>Notas</title>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo"><strong>D.A.S.A Unisanta</strong></div>
+        <ul>
+            <!-- <li><a href="./login.html"><strong>Login</strong></a></li>
+            <li><a href="./register.html"><strong>Registre-se</strong></a></li> -->
+            <li><a href="/portalprivado"><strong>Voltar</strong></a></li>
+            <li id="logout"><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <h1>Bloco de notas Online</h1>
+    
+    <!-- Formulário para adicionar uma nova nota -->
+      <!-- Formulário para adicionar uma nova nota -->
+    <form action="/adicionar-nota" method="POST">
+      <input type="text" name="titulo" placeholder="Título da nota">
+      <textarea name="nota" rows="4" cols="50" placeholder="Digite sua nova nota aqui"></textarea>
+      <br>
+      <button type="submit">Adicionar Nota</button>
+    </form>
+
+      
+      <!-- Lista de notas existentes -->
+      <ul>
+        <% for (let i = 0; i < notas.length; i++) { %>
+          <li class="nota-item">
+            <p class="titulo">Titulo: <%= notas[i].titulo %></p> <!-- Adicione esta linha para espelhar o título -->
+            <span id="nota_<%= notas[i].id %>"><%= notas[i].nota %></span>
+
+            <div class="botoes">
+              <button class="editar-button" style="background-color: green;" onclick="editarNota(<%= notas[i].id %>);">Editar</button>
+              <button class="excluir-button" onclick="excluirNota(<%= notas[i].id %>);">Excluir</button>
+            </div>
+
+            <input type="hidden" class="nota-id" value="<%= notas[i].id %>">
+          </li>
+        <% } %>
+      </ul>
+
+      <!-- Modal para visualizar e editar a nota -->
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="fecharModal()">&times;</span>      
+          <textarea id="modal-textarea" rows="4" cols="50"></textarea>
+          <button onclick="salvarNota()">Salvar</button>
+        </div>
+      </div>
+
+
+      <footer>
+        <div class="container">
+            <p><strong>&copy; 2023 Portal de Exemplo. Todos os direitos reservados.</strong></p>
+        </div>
+    </footer>
+      
+      <script>
+        function editarNota(notaId) {
+          const notaElement = document.getElementById(`nota_${notaId}`);
+          const tituloElement = document.getElementById(`titulo_${notaId}`);
+          const notaTexto = notaElement.textContent;
+          const titulo = tituloElement.textContent; // Obtém o título da nota
+
+          const modal = document.getElementById('modal');
+          const modalTituloInput = document.getElementById('modal-titulo');
+          const modalTextarea = document.getElementById('modal-textarea');
+
+          modal.style.display = 'block';
+          modalTextarea.value = notaTexto;
+
+          // Salvar o ID da nota atual no modal para uso posterior
+          modal.dataset.notaId = notaId;
+        }
+
+
+        
+        function enviarNotaEditada(notaId, novoTexto) {
+          // Use JavaScript para fazer uma solicitação para o servidor e atualizar a nota
+          // Aqui você pode usar fetch ou outra abordagem que preferir
+          fetch(`/atualizar-nota/${notaId}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ novoTexto }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                console.log('Nota atualizada com sucesso');
+              } else {
+                alert('Erro ao atualizar a nota');
+              }
+            })
+            .catch((error) => {
+              console.error('Erro:', error);
+              alert('Erro ao atualizar a nota');
+            });
+        }
+
+        function excluirNota(notaId) {
+          if (confirm('Tem certeza de que deseja excluir esta nota?')) {
+            // Use JavaScript para fazer uma solicitação para o servidor e excluir a nota
+            fetch(`/excluir-nota/${notaId}`, {
+              method: 'POST',
+            })
+              .then((response) => {
+                if (response.status === 200) {
+                  // Remove a nota da interface do usuário após a exclusão bem-sucedida
+                  const notaElement = document.getElementById(`nota_${notaId}`);
+                  if (notaElement) {
+                    notaElement.parentElement.remove();
+                  }
+                } else {
+                  alert('Erro ao excluir a nota');
+                }
+              })
+              .catch((error) => {
+                console.error('Erro:', error);
+                alert('Erro ao excluir a nota');
+              });
+          }
+        }
+
+        function editarNota(notaId) {
+          const notaElement = document.getElementById(`nota_${notaId}`);
+          const notaTexto = notaElement.textContent;
+          const modal = document.getElementById('modal');
+          const modalTextarea = document.getElementById('modal-textarea');
+
+          modal.style.display = 'block';
+          modalTextarea.value = notaTexto;
+
+          // Salvar o ID da nota atual no modal para uso posterior
+          modal.dataset.notaId = notaId;
+        } 
+
+        function fecharModal() {
+          const modal = document.getElementById('modal');
+          modal.style.display = 'none';
+        }
+
+        function salvarNota() {
+          const modal = document.getElementById('modal');
+          const notaId = modal.dataset.notaId;
+          const modalTextarea = document.getElementById('modal-textarea');
+          const novoTexto = modalTextarea.value;
+
+          // Atualize o texto da nota no elemento HTML
+          const notaElement = document.getElementById(`nota_${notaId}`);
+          notaElement.textContent = novoTexto;
+
+          // Feche o modal
+          fecharModal();
+
+          // Chame a função para enviar a nota editada para o servidor (enviarNotaEditada)
+          enviarNotaEditada(notaId, novoTexto);
+        }
+      </script>
+   
+</body>
+</html>

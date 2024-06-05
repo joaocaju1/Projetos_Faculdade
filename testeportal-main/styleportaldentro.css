@@ -1,0 +1,238 @@
+/* Reset de estilos e configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para o cabeçalho */
+header {
+    background: #000000;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 20px;
+}
+
+header .logo {
+    display: flex;
+    gap: 200px;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+}
+
+header ul li {
+    margin-right: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+header ul li a:hover {
+    text-decoration: none;
+    color: rgb(37, 178, 197);
+}
+
+/* Estilos personalizados para o título do usuário */
+.user-info h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px; /* Adicione espaço à esquerda do título do usuário */
+
+}
+
+/* Estilos para o conteúdo */
+.grid-container {
+    width: 700px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 100px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+
+#titulo {
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+#titulonoticia {
+    margin: 0 auto;
+}
+
+.card {
+    border: 0px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para o rodapé */
+footer {
+    background: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+   /* Estilo para a barra lateral */
+   .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* A barra lateral estará inicialmente oculta */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #ffffff;
+    padding: 20px;
+    transition: left 0.3s;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+/* Estilo para o botão de alternância da barra lateral */
+#open-sidebar {
+    top: 10px;
+    left: 10px;
+    background-color: #00141f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+/* Estilo para a barra lateral quando aberta */
+.sidebar.open {
+    left: 0;
+    z-index: 999; /* Valor alto para garantir que sobreponha outros elementos */
+}
+
+/* Estilo para os botões dentro das tags <li> */
+.sidebar li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+.sidebar li a:hover {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    background-color: #646464;
+    border-radius: 5px;
+}
+.topic {
+    flex: 1;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #070000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Para esconder qualquer parte da imagem que estiver fora do contêiner */
+}
+
+.topic::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(5px); /* Ajuste o valor conforme necessário */
+    z-index: -1;
+}
+
+.column-container {
+    display: flex;
+    background-color: #07000083;
+}
+
+#topic1::before {
+    background-image: url('./fotos/emprego.webp');
+}
+
+#topic2::before {
+    background-image: url('./fotos/noticias.jpeg');
+}
+
+#topic3::before {
+    background-image: url('./fotos/conteudos.avif');
+}
+
+#topic4::before {
+    background-image: url('./fotos/notepad.jpg');
+}
+
+
+#topic1, #topic2, #topic3, #topic4 {
+    font-size: 16px; /* Tamanho normal */
+    transition: font-size 0.3s; /* Inicialmente, definimos a transição para font-size */
+    color: #fff;
+    
+}
+
+#topic1:hover, #topic2:hover, #topic3:hover, #topic4:hover {
+    font-size: 20px; /* Tamanho aumentado no hover */
+}
+
+.botoes button{
+    font-size: 17px;
+    margin-top: 20px;
+    background-color: rgb(5, 72, 255);
+    border: 0px;
+    border-radius: 10px;
+    width: 250px;
+    height: 36px;
+    cursor: pointer;
+    color: white;
+}
+
+#botao1{
+    border-color: aqua;
+}

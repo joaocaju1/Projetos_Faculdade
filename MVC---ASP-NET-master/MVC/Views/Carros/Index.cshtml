@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MVC.Models.Carros>
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>Concessionária</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Carro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+   
+                @Html.ActionLink("Detalhes", "Details", new { id=item.Valor }) |
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

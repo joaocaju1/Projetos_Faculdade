@@ -1,0 +1,106 @@
+  /* CSS personalizado para a seção em tela cheia */
+  .fullscreen-section {
+    height: 100vh; /* Toda a altura da tela */
+    background-image: url('./img/hiu_4.jpg'); /* Adicione sua imagem de fundo aqui */
+    background-size: cover;
+    background-position: center;
+    color: #0d0101; /* Cor do texto */
+}
+
+.fullscreen-section h1 {
+    font-size: 3rem;
+}
+
+.fullscreen-section p {
+    font-size: 1.5rem;
+}
+
+.fullscreen-section .row {
+    align-items: center;
+}
+
+.logo{
+    margin-top: 250px;
+}
+
+.escrita{
+    margin-top: 250px;
+}
+
+.informacoes{
+    margin-left: 200px;
+}
+
+.cards{
+    margin-bottom: 100px;
+}
+
+.portal{
+    font-size: 30px;
+}
+
+
+
+.lista{
+    font-size: 26px;
+
+}
+
+/* Adicione mais estilos conforme necessário para o restante da página */
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 767px) {
+    .fullscreen-section h1 {
+        font-size: 2rem;
+    }
+
+    .fullscreen-section p {
+        font-size: 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 20px;
+        margin-top: 0px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+    }
+
+    .col-md-7 {
+        margin-top: 50px;
+    }
+
+    .col-md-4 {
+        margin-top: 50px;
+    }
+
+    .logo {
+        width: 300px;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    .container {
+        margin-left: 0;
+    }
+
+    .container-fluid.fullscreen-section {
+        padding: 10px;
+    }
+
+    .footer p {
+        font-size: 14px;
+    }
+
+    .informacoes{
+    margin-left: 20px;
+  }
+
+  .cards{
+    margin-left: 20px;
+  }
+
+ 
+}
+

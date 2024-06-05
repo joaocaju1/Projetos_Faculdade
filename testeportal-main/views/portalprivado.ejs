@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styleportaldentro.css" media="screen" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    
+    <title>Portal de Exemplo</title>
+</head>
+<body action="/portalprivado">
+    <div class="bg">
+        <div class="star-field">
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+        </div>
+    </div>
+
+    <!-- Botão para abrir a barra lateral -->
+   
+
+    <header>
+        <nav>
+             <div class="logo">
+                <p><strong>USER:</strong> <%= nomeDoUsuario %></p>
+                <!-- <button id="open-sidebar">Menu</button> -->
+            </div>
+            
+            <div class="user-info"></div> 
+            <ul>
+              
+                <!-- <li><a href="/noticias.html">Notícias</a></li> -->
+                <li><a href="/vagas.html">Vagas</a></li>
+                <li><a href="/conteudos.html">Conteúdos</a></li>
+                <li><a href="/notas">Bloco de Notas</a></li>
+                <li id="logout"><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#" id="whatsapp-bot">WhatsApp Bot</a></li>
+            <li><a href="#" id="bloco-notas">Bloco de Notas</a></li>
+            <li><a href="#" id="deslogar">Deslogar</a></li>
+        </ul>
+    </div>
+    <div class="column-container">
+        <div class="topic" id="topic1">
+          <div class="background-blur" style="background-image: url('./fotos/emprego.webp');"></div>
+          <div class="text-content">
+            <h2>Vagas para TI</h2>
+            <p>Se voce está procurando um estagio para sua jornada comercial, acesse.</p>
+            <div  id="botao1" class="botoes">
+                <a href="/vagas.html">
+                    <button>Acessar</button>
+                </a> 
+            </div>
+          </div>
+        </div>
+      
+        <!-- <div class="topic" id="topic2">
+          <div class="background-blur" style="background-image: url('./fotos/seu-background2.webp');"></div>
+          <div class="text-content">
+            <h2>Noticias TI</h2>
+            <p>Veja as noticias mais atualizadas do momento</p>
+            <div id="botao2" class="botoes">
+                <a href="./noticias.html">
+                    <button>Acessar</button>
+                </a> 
+            </div>
+          </div>
+        </div> -->
+      
+        <div class="topic" id="topic3">
+          <div class="background-blur" style="background-image: url('./fotos/seu-background3.webp');"></div>
+          <div class="text-content">
+            <h2>Conteudos de Tecnologia</h2>
+            <p>Acesse para descobrir novos cursos, videos, aulas e exercicios</p>
+            <div id="botao3" class="botoes">
+                <a href="./conteudos.html">
+                    <button>Acessar</button>
+                </a> 
+            </div>
+          </div>
+        </div>
+      
+        <div class="topic" id="topic4">
+          <div class="background-blur" style="background-image: url('./fotos/seu-background4.webp');"></div>
+          <div class="text-content">
+            <h2>Bloco de notas ONLINE   </h2>
+            <p>Utilize para anotaçoes em aula. Tudo estará protegido.</p>
+            <div id="botao4" class="botoes">
+                <a href="/notas">
+                    <button>Acessar</button>
+                </a> 
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Portal de Exemplo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const openSidebarButton = document.getElementById("open-sidebar");
+        const sidebar = document.getElementById("sidebar");
+
+        openSidebarButton.addEventListener("click", function () {
+            sidebar.classList.toggle("open");
+        });
+
+        sidebar.addEventListener("click", function () {
+            sidebar.classList.remove("open");
+        });
+
+        const sidebarLinks = document.querySelectorAll(".sidebar a");
+        sidebarLinks.forEach(link => {
+            link.addEventListener("click", function () {
+                sidebar.classList.remove("open");
+            });
+        });
+
+        document.addEventListener("click", function (event) {
+            if (!sidebar.contains(event.target) && !event.target.matches("#open-sidebar")) {
+                sidebar.classList.remove("open");
+            }
+        });
+    </script>
+</body>
+</html>

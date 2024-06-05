@@ -1,0 +1,74 @@
+npm install nodemailer
+
+
+
+DROP DATABASE bancoportaldasa;
+
+CREATE DATABASE bancoportaldasa;
+USE bancoportaldasa;
+
+
+CREATE TABLE usuarios (
+  email VARCHAR(255) PRIMARY KEY,
+  nome VARCHAR(255) NOT NULL,
+  login VARCHAR(255) NOT NULL,
+  senha VARCHAR(255) NOT NULL,
+  telefone VARCHAR(15),
+  token VARCHAR(64),
+  autenticacao BOOLEAN DEFAULT 0
+);
+
+
+CREATE TABLE notas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255) NOT NULL,
+  nota TEXT NOT NULL,
+  FOREIGN KEY (email) REFERENCES usuarios(email)
+);
+
+ALTER TABLE notas
+ADD titulo VARCHAR(255);
+
+<div class="custom-section">
+        <h1 id="titulo">Área do Aluno</h1>
+        
+        <div class="grid-container">
+            
+            <h2 id="titulonoticia">NOTICIAS DE TECNOLOGIA</h2> 
+            <a href="/logout">Logout</a>
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="./fotos/tecnologia.avif" alt="Imagem 1">
+                <h3>First Mile: o que se sabe sobre o software espião usado pela Abin</h3>
+                <p>Tecnologia de empresa israelense monitorou irregularmente a localização de celulares de políticos, policiais, jornalistas e até mesmo juízes, segundo a investigação da PF. Sistema é israelense e empresa por trás não apresenta informações sobre ele em seu site.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="./fotos/tecnologia.avif" alt="Imagem 1">
+                <h3>First Mile: o que se sabe sobre o software espião usado pela Abin</h3>
+                <p>Tecnologia de empresa israelense monitorou irregularmente a localização de celulares de políticos, policiais, jornalistas e até mesmo juízes, segundo a investigação da PF. Sistema é israelense e empresa por trás não apresenta informações sobre ele em seu site.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="./fotos/tecnologia.avif" alt="Imagem 1">
+                <h3>First Mile: o que se sabe sobre o software espião usado pela Abin</h3>
+                <p>Tecnologia de empresa israelense monitorou irregularmente a localização de celulares de políticos, policiais, jornalistas e até mesmo juízes, segundo a investigação da PF. Sistema é israelense e empresa por trás não apresenta informações sobre ele em seu site.</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="card">
+                <img src="./fotos/tecnologia.avif" alt="Imagem 1">
+                <h3>First Mile: o que se sabe sobre o software espião usado pela Abin</h3>
+                <p>Tecnologia de empresa israelense monitorou irregularmente a localização de celulares de políticos, policiais, jornalistas e até mesmo juízes, segundo a investigação da PF. Sistema é israelense e empresa por trás não apresenta informações sobre ele em seu site.</p>
+            </div>
+            <!-- Card 5 -->
+            <div class="card">
+                <img src="sua-imagem-5.jpg" alt="Imagem 5">
+                <p>Comentário do Card 5</p>
+            </div>
+            <!-- Card 6 -->
+            <div class="card">
+                <img src="sua-imagem-6.jpg" alt="Imagem 6">
+                <p>Comentário do Card 6</p>
+            </div>
+        </div>
+    </div>

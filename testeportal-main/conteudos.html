@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteudos</title>
+    <style>
+        /* Reset de estilos e configurações gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: #000000;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 20px;
+        }
+
+        header .logo {
+            display: flex;
+            gap: 200px;
+        }
+
+        header ul {
+            list-style: none;
+            display: flex;
+        }
+
+        header ul li {
+            margin-right: 20px;
+        }
+
+        header ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        header ul li a:hover {
+            text-decoration: none;
+            color: rgb(37, 178, 197);
+        }
+
+        /* Estilos para a grade de cards */
+        .grid-container {
+            margin-top: 100px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .card-container {
+            width: 30%; /* Adicionei este estilo para limitar a largura dos cards a 48% da largura da tela */
+            margin-bottom: 20px;
+        }
+
+        .card {
+            width: 600px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer; /* Adiciona cursor de ponteiro ao passar por cima */
+        }
+
+        h3 {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            border-radius: 5px;
+            max-width: 80%;
+            position: relative;
+        }
+
+        .close {
+            color: #888;
+            font-size: 30px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .modal-iframe {
+            width: 100%;
+            height: 60vh;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Estilos para o rodapé */
+        footer {
+            background: #000000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 999;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">D.A.S.A Unisanta</div>
+            <ul>
+                <li><a href="/portalprivado"><strong>Voltar</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Grade de Cards -->
+    <div class="grid-container">
+        <!-- Card 1 -->
+        <div class="card-container">
+            <div class="card" onclick="openModal(this, 'https://www.youtube.com/embed/nfZKhjKVXBo?si=inlHRchTAWZhNZhK')">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/nfZKhjKVXBo?si=inlHRchTAWZhNZhK" frameborder="0" allowfullscreen></iframe>
+                <h3>Treinando Logica de programação com CSS, HTML e JS fazendo jogos.</h3>
+                <p>  Esse é um video pra quem está iniciando ao desenvolvimento front end.</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-container">
+            <div class="card" onclick="openModal(this, 'https://www.youtube.com/embed/IL1nt8fJyjQ?si=MaWKYmoagbu04sbh')">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/IL1nt8fJyjQ?si=MaWKYmoagbu04sbh" frameborder="0" allowfullscreen></iframe>
+                <h3>Formulário em CSS, HTML e JavaScript</h3>
+                <p>Criação de formulário com verificação</p>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" onclick="openModal(this, 'https://www.youtube.com/embed/YOUTUBE_VIDEO_ID_2')">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+                <h3>Título do Vídeo 2</h3>
+                <p>Descrição do Vídeo 2.</p>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" onclick="openModal(this, 'https://www.youtube.com/embed/YOUTUBE_VIDEO_ID_2')">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+                <h3>Título do Vídeo 2</h3>
+                <p>Descrição do Vídeo 2.</p>
+            </div>
+        </div>
+
+        <!-- Adicione mais cards conforme necessário -->
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <iframe class="modal-iframe" id="modalIframe" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Portal de Exemplo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function openModal(card, videoUrl) {
+            const modal = document.getElementById('myModal');
+            const modalIframe = document.getElementById('modalIframe');
+            modalIframe.src = videoUrl;
+            modal.style.display = 'block';
+            card.style.pointerEvents = 'none'; // Impede que o clique no card seja propagado para trás do modal
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('myModal');
+            const modalIframe = document.getElementById('modalIframe');
+            modalIframe.src = '';
+            modal.style.display = 'none';
+
+            // Habilita os cliques no card novamente
+            const cards = document.getElementsByClassName('card');
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].style.pointerEvents = 'auto';
+            }
+        }
+
+        window.onclick = function (event) {
+            const modal = document.getElementById('myModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        };
+    </script>
+</body>
+</html>

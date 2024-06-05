@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styleportal.css" media="screen" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    
+    <title>Portal de Exemplo</title>
+</head>
+<body>
+    <div class="bg">
+        <div class="star-field">
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">D.A.S.A Unisanta</div>
+            <ul>
+                <li><a href="./login.html"><strong>Login</strong></a></li>
+                <li><a href="./register.html"><strong>Registre-se</strong></a></li>
+                <li><a href="/portaL.html"><strong>Finalidade</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Simulate a smartphone / tablet -->
+<div class="mobile-container">
+
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+      <a href="#home" class="active">D.A.S.A</a>
+      <div id="myLinks">
+        <a href="./login.htm">Login</a>
+        <a href="./register.html">Registre-se</a>
+        <a href="/portaL.html">Sobre</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars" style="color: black;">I</i>
+      </a>
+    </div>
+    </div>
+
+    <div class="custom-section">
+        <div class="image-container">
+            <img src="./fotos/LogoDasa.png" alt="Sua imagem">
+        </div>
+        <div class="text-container">
+            <h2 id="color-changing-text">PORTAL DASA 2023</h2>
+            <p><strong>Esta pagina é destinada aos alunos da Atlética D.A.S.A de<br>Sistema da Informação e Analise e Desenvolvimento de Sistemas. <br> A página foi feita para a centralizações de informações da atlética <br>, horarios, eventos, noticias e vagas de empregos.</strong></p>
+
+            <div class="botoes">
+                <a href="./login.html">
+                    <button>Login</button>
+                </a> 
+                
+                <a href="./register.html">
+                    <button>Registre-se</button>
+                  </a> 
+            </div>
+        </div>
+        
+        
+    </div>
+
+    
+
+    
+    
+
+    <footer>
+        <div class="container">
+            <p><strong>&copy; 2023 Portal de Exemplo. Todos os direitos reservados.</strong></p>
+        </div>
+    </footer>
+
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myLinks");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+            
+          } else {
+            x.style.display = "block";
+            header.style = display = "none"
+          }
+        }
+        </script>
+</body>
+</html>
